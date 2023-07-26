@@ -1,5 +1,6 @@
 """Tests for continuous order statistics."""
 import numpy as np
+import pytest
 from numpy.typing import NDArray
 
 from pyordstat.continuous import ContinuousOrderStatistics
@@ -41,3 +42,10 @@ def test_c_ordstat():
 
     assert np.allclose(pdf_3_2, pdf_3_2_targ)
     assert np.allclose(cdf_3_2, cdf_3_2_targ)
+
+    # Test errors
+    with pytest.raises(ValueError, match="k must be between 1 and n."):
+        exp_ordstat.order_statistic_pdf(x, 2, 3)
+
+    with pytest.raises(ValueError, match="k must be between 1 and n."):
+        exp_ordstat.order_statistic_cdf(x, 2, 0)
