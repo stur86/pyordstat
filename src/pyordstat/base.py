@@ -12,6 +12,7 @@ class CallableDistrFunc(Protocol):
     def __call__(self, x: NDArray[np.number], *args: Any, **kwds: Any) -> NDArray[np.number]:
         """Call distribution function."""
 
+
 StatDistrFunc = Union[CallableDistrFunc, NDArray[np.number]]
 
 
@@ -23,8 +24,13 @@ class BaseOrderStatistics(ABC):
     _args: Tuple[Any, ...]
     _kwargs: Dict[str, Any]
 
-    def __init__(self, pdf: StatDistrFunc, cdf: StatDistrFunc,
-                 *args: Tuple[Any,...], **kwargs: Dict[str, Any]) -> None:
+    def __init__(
+        self,
+        pdf: StatDistrFunc,
+        cdf: StatDistrFunc,
+        *args: Tuple[Any, ...],
+        **kwargs: Dict[str, Any],
+    ) -> None:
         """Initialise base order statistics distribution.
 
         Args:
@@ -47,12 +53,6 @@ class BaseOrderStatistics(ABC):
     def cdf(self) -> StatDistrFunc:
         """Cumulative distribution function."""
         return self._cdf
-
-    def _get_pdf(self, x: NDArray[np.number]) -> NDArray[np.number]:
-        return self._pdf(x, *self._args, **self._kwargs)
-
-    def _get_cdf(self, x: NDArray[np.number]) -> NDArray[np.number]:
-        return self._cdf(x, *self._args, **self._kwargs)
 
     @abstractmethod
     def order_statistic(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
