@@ -1,0 +1,31 @@
+{
+  "template": "https://github.com/radix-ai/poetry-cookiecutter",
+  "commit": "715f2bb25440f8fb18576a499be7c16207336191",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "package_name": "pyordstat",
+      "package_description": "Order statistics for Python",
+      "package_url": "https://github.com/stur86/pyordstat",
+      "author_name": "Simone Sturniolo",
+      "author_email": "simonesturniolo@gmail.com",
+      "python_version": "3.8",
+      "development_environment": "simple",
+      "with_conventional_commits": "0",
+      "with_fastapi_api": "0",
+      "with_jupyter_lab": "0",
+      "with_pydantic_typing": "0",
+      "with_sentry_logging": "0",
+      "with_streamlit_app": "0",
+      "with_typer_cli": "0",
+      "continuous_integration": "GitHub",
+      "docstring_style": "NumPy",
+      "private_package_repository_name": "",
+      "private_package_repository_url": "",
+      "__package_name_kebab_case": "pyordstat",
+      "__package_name_snake_case": "pyordstat",
+      "_template": "https://github.com/radix-ai/poetry-cookiecutter"
+    }
+  },
+  "directory": null
+}
