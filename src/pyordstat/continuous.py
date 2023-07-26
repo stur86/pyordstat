@@ -3,9 +3,9 @@ from typing import Any, Dict, Tuple
 
 import numpy as np
 from numpy.typing import NDArray
-from scipy.special import binom
 
 from pyordstat.base import BaseOrderStatistics, CallableDistrFunc
+from pyordstat.core import ordstat_cdf, ordstat_pdf
 
 
 class ContinuousOrderStatistics(BaseOrderStatistics):
@@ -69,7 +69,7 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
         pdf_vals = self.pdf(x, *self._args, **self._kwargs)
         cdf_vals = self.cdf(x, *self._args, **self._kwargs)
 
-        return k * binom(n, k) * (cdf_vals ** (k - 1)) * ((1 - cdf_vals) ** (n - k)) * pdf_vals
+        return ordstat_pdf(pdf_vals, cdf_vals, n, k)
 
     def order_statistic_cdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
         """Calculate the k-th order statistic PDF of a sample of size n.
@@ -95,13 +95,4 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
 
         cdf_vals = self.cdf(x, *self._args, **self._kwargs)
 
-        if k == 1:
-            # Special case
-            return 1 - (1 - cdf_vals) ** n
-
-        j = np.arange(k, n + 1)
-        bc = binom(n, j)
-        cdf1 = cdf_vals[None, :] ** j[:, None]
-        cdf2 = (1 - cdf_vals[None, :]) ** (n - j)[:, None]
-
-        return np.sum(bc[:, None] * cdf1 * cdf2, axis=0)
+        return ordstat_cdf(cdf_vals, n, k)
