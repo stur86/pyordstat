@@ -9,7 +9,7 @@
       "package_url": "https://github.com/stur86/pyordstat",
       "author_name": "Simone Sturniolo",
       "author_email": "simonesturniolo@gmail.com",
-      "python_version": "3.8",
+      "python_version": "3.10",
       "development_environment": "simple",
       "with_conventional_commits": "0",
       "with_fastapi_api": "0",
