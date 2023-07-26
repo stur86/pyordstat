@@ -55,8 +55,8 @@ class BaseOrderStatistics(ABC):
         return self._cdf
 
     @abstractmethod
-    def order_statistic(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
-        """Order statistics.
+    def order_statistic_pdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
+        """Order statistics probability density function.
 
         Args:
             x (NDArray[np.number]): Random variable.
@@ -65,5 +65,19 @@ class BaseOrderStatistics(ABC):
 
         Returns
         -------
-            NDArray[np.number]: Order statistic.
+            NDArray[np.number]: Order statistic probability density function.
+        """
+
+    @abstractmethod
+    def order_statistic_cdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
+        """Order statistics cumulative distribution function.
+
+        Args:
+            x (NDArray[np.number]): Random variable.
+            n (int): Sample size.
+            k (int): Order statistic.
+
+        Returns
+        -------
+            NDArray[np.number]: Order statistic cumulative distribution function.
         """
