@@ -9,11 +9,13 @@ from pyordstat.continuous import CallableDistrFunc, ContinuousOrderStatistics
 
 def _uniform_pdf(x: NDArray[np.number], a: float, b: float) -> NDArray[np.number]:
     ab = b - a
+    x = np.asarray(x)
     return np.where((x >= a) & (x <= b), 1 / ab, 0)
 
 
 def _uniform_cdf(x: NDArray[np.number], a: float, b: float) -> NDArray[np.number]:
     ab = b - a
+    x = np.asarray(x)
     ans = np.zeros_like(x)
     ans[x >= b] = 1.0
     domain = (x >= a) & (x <= b)
