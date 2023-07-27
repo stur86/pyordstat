@@ -1,5 +1,5 @@
 """Order statistics for general distributions of known PDF and CDF."""
-from typing import Any, Dict, Tuple
+from typing import Any, cast
 
 import numpy as np
 from numpy.typing import NDArray
@@ -18,8 +18,8 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
         self,
         pdf: CallableDistrFunc,
         cdf: CallableDistrFunc,
-        *args: Tuple[Any, ...],
-        **kwargs: Dict[str, Any],
+        *args: Any,
+        **kwargs: Any,
     ) -> None:
         """Create a continuous order statistics distribution.
 
@@ -29,10 +29,17 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
         Args:
             pdf (CallableDistrFunc): _Probability density function._
             cdf (CallableDistrFunc): _Cumulative distribution function._
-            *args (Tuple[Any, ...]): _Additional arguments to pass to the distribution functions._
-            **kwargs (Dict[str, Any]): Additional keyword arguments to pass to the distribution functions.
+            *args (Any): _Additional arguments to pass to the distribution functions._
+            **kwargs (Any): Additional keyword arguments to pass to the distribution functions.
         """
-        super().__init__(pdf, cdf, *args, **kwargs)
+
+        def pdf_bundled(x: NDArray[np.number]) -> NDArray[np.number]:
+            return pdf(x, *args, **kwargs)
+
+        def cdf_bundled(x: NDArray[np.number]) -> NDArray[np.number]:
+            return cdf(x, *args, **kwargs)
+
+        super().__init__(cast(CallableDistrFunc, pdf_bundled), cast(CallableDistrFunc, cdf_bundled))
 
     @property
     def pdf(self) -> CallableDistrFunc:
@@ -66,8 +73,8 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
         if (k <= 0) or (k > n):
             raise ValueError("k must be between 1 and n.")
 
-        pdf_vals = self.pdf(x, *self._args, **self._kwargs)
-        cdf_vals = self.cdf(x, *self._args, **self._kwargs)
+        pdf_vals = self.pdf(x)
+        cdf_vals = self.cdf(x)
 
         return ordstat_pdf(pdf_vals, cdf_vals, n, k)
 
@@ -93,6 +100,6 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
         if (k <= 0) or (k > n):
             raise ValueError("k must be between 1 and n.")
 
-        cdf_vals = self.cdf(x, *self._args, **self._kwargs)
+        cdf_vals = self.cdf(x)
 
         return ordstat_cdf(cdf_vals, n, k)

@@ -22,8 +22,8 @@ def test_c_ordstat():
 
     x = np.linspace(0, 10, 20)
 
-    assert np.allclose(exp_ordstat.pdf(x, scale), pdf(x, scale))
-    assert np.allclose(exp_ordstat.cdf(x, scale), cdf(x, scale))
+    assert np.allclose(exp_ordstat.pdf(x), pdf(x, scale))
+    assert np.allclose(exp_ordstat.cdf(x), cdf(x, scale))
 
     # Case 1: n = 2, k = 1
     pdf_2_1 = exp_ordstat.order_statistic_pdf(x, 2, 1)
