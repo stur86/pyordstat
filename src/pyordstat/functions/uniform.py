@@ -16,7 +16,8 @@ def _uniform_cdf(x: NDArray[np.number], a: float, b: float) -> NDArray[np.number
     ab = b - a
     ans = np.zeros_like(x)
     ans[x >= b] = 1.0
-    ans[(x >= a) & (x <= b)] = (x - a) / ab
+    domain = (x >= a) & (x <= b)
+    ans[domain] = (x[domain] - a) / ab
     return ans
 
 
