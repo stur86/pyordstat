@@ -8,8 +8,8 @@ from pyordstat.base import BaseOrderStatistics, CallableDistrFunc
 from pyordstat.core import ordstat_cdf, ordstat_pdf
 
 
-class OrderStatistics(BaseOrderStatistics):
-    """Order statistics distribution."""
+class ContinuousOrderStatistics(BaseOrderStatistics):
+    """Order statistics distribution for continuous distributions."""
 
     _pdf: CallableDistrFunc
     _cdf: CallableDistrFunc

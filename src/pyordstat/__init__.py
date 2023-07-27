@@ -1,4 +1,4 @@
 """pyordstat package."""
-from pyordstat.general import OrderStatistics
+from pyordstat.continuous import ContinuousOrderStatistics
 
-__all__ = ["OrderStatistics"]
+__all__ = ["ContinuousOrderStatistics"]

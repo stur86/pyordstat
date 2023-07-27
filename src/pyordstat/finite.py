@@ -3,7 +3,7 @@ import numpy as np
 from numpy.typing import NDArray
 
 from pyordstat.base import BaseOrderStatistics
-from pyordstat.core import ordstat_cdf, ordstat_pdf
+from pyordstat.core import ordstat_cdf
 
 
 class FiniteOrderStatistics(BaseOrderStatistics):
@@ -25,8 +25,8 @@ class FiniteOrderStatistics(BaseOrderStatistics):
             pdf (NDArray[np.number]): Probability density function of the distribution.
         """
         isort = np.argsort(x)
-        self._x = x[isort]
-        pdf = pdf[isort]
+        self._x = np.asarray(x)[isort]
+        pdf = np.asarray(pdf)[isort]
         cdf = np.cumsum(pdf)
 
         # Normalize
@@ -61,7 +61,8 @@ class FiniteOrderStatistics(BaseOrderStatistics):
         -------
             NDArray[np.number]: Probability density function of the k-th order statistic.
         """
-        return ordstat_pdf(self._pdf, self._cdf, n, k)
+        cdf = self.order_statistic_cdf(n, k)
+        return np.diff(cdf, prepend=0)
 
     def order_statistic_cdf(self, n: int, k: int) -> NDArray[np.number]:
         """Order statistic cumulative distribution function.

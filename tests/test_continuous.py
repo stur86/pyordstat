@@ -3,7 +3,7 @@ import numpy as np
 import pytest
 from numpy.typing import NDArray
 
-from pyordstat.general import OrderStatistics
+from pyordstat.continuous import ContinuousOrderStatistics
 
 
 def test_c_ordstat():
@@ -18,7 +18,7 @@ def test_c_ordstat():
 
     scale = 1.0
 
-    exp_ordstat = OrderStatistics(pdf, cdf, scale)
+    exp_ordstat = ContinuousOrderStatistics(pdf, cdf, scale)
 
     x = np.linspace(0, 10, 20)
 
