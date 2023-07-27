@@ -1,5 +1,5 @@
 """Base class for order statistics distributions."""
-from abc import ABC, abstractmethod
+from abc import ABC
 from typing import Any, Dict, Protocol, Tuple, Union
 
 import numpy as np
@@ -53,31 +53,3 @@ class BaseOrderStatistics(ABC):
     def cdf(self) -> StatDistrFunc:
         """Cumulative distribution function."""
         return self._cdf
-
-    @abstractmethod
-    def order_statistic_pdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
-        """Order statistics probability density function.
-
-        Args:
-            x (NDArray[np.number]): Random variable.
-            n (int): Sample size.
-            k (int): Order statistic.
-
-        Returns
-        -------
-            NDArray[np.number]: Order statistic probability density function.
-        """
-
-    @abstractmethod
-    def order_statistic_cdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
-        """Order statistics cumulative distribution function.
-
-        Args:
-            x (NDArray[np.number]): Random variable.
-            n (int): Sample size.
-            k (int): Order statistic.
-
-        Returns
-        -------
-            NDArray[np.number]: Order statistic cumulative distribution function.
-        """

@@ -1,4 +1,4 @@
-"""Continuous order statistics distributions."""
+"""Order statistics for general distributions of known PDF and CDF."""
 from typing import Any, Dict, Tuple
 
 import numpy as np
@@ -8,8 +8,8 @@ from pyordstat.base import BaseOrderStatistics, CallableDistrFunc
 from pyordstat.core import ordstat_cdf, ordstat_pdf
 
 
-class ContinuousOrderStatistics(BaseOrderStatistics):
-    """Continuous order statistics distribution."""
+class OrderStatistics(BaseOrderStatistics):
+    """Order statistics distribution."""
 
     _pdf: CallableDistrFunc
     _cdf: CallableDistrFunc
