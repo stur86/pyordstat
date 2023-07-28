@@ -1,5 +1,4 @@
 """Order statistics for commonly used distributions."""
-from pyordstat.functions.normal import NormalOrderStatistics
-from pyordstat.functions.uniform import UniformOrderStatistics
+from pyordstat.functions.rv_continuous import RVNormalStatistics, RVUniformStatistics
 
-__all__ = ["UniformOrderStatistics", "NormalOrderStatistics"]
+__all__ = ["RVNormalStatistics", "RVUniformStatistics"]

@@ -1,12 +1,12 @@
 """Test functions."""
 import numpy as np
 
-from pyordstat.functions import NormalOrderStatistics, UniformOrderStatistics
+from pyordstat.functions import RVNormalStatistics, RVUniformStatistics
 
 
 def test_uniform():
     """Test uniform order statistics."""
-    uniform = UniformOrderStatistics(0, 1)
+    uniform = RVUniformStatistics(0, 1)
 
     assert np.isclose(uniform.pdf(0.5), 1.0)
     assert np.isclose(uniform.cdf(0.5), 0.5)
@@ -22,7 +22,7 @@ def test_uniform():
 
 def test_normal():
     """Test normal order statistics."""
-    normal = NormalOrderStatistics(0, 1)
+    normal = RVNormalStatistics(0, 1)
 
     pdf_val = 0.3520653267642995
     cdf_val = 0.6914624612740131
