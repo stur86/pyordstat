@@ -1,7 +1,12 @@
 """Test functions."""
 import numpy as np
 
-from pyordstat.functions import RVNormalStatistics, RVUniformStatistics
+from pyordstat.functions import (
+    RVBinomialStatistics,
+    RVGeomStatistics,
+    RVNormalStatistics,
+    RVUniformStatistics,
+)
 
 
 def test_uniform():
@@ -31,3 +36,30 @@ def test_normal():
 
     assert np.isclose(normal.order_statistic_pdf(0.5, 2, 1), 2 * pdf_val * (1 - cdf_val))
     assert np.isclose(normal.order_statistic_cdf(0.5, 2, 1), 2 * cdf_val - cdf_val**2)
+
+
+def test_geometric():
+    """Test geometric order statistics."""
+    geom = RVGeomStatistics(0.7)
+
+    assert np.isclose(geom.pmf(0.5), 0.0)
+    assert np.isclose(geom.cdf(0.5), 0.0)
+
+    assert np.isclose(geom.pmf(2), 0.21)
+    assert np.isclose(geom.cdf(2), 0.91)
+
+    assert np.isclose(geom.order_statistic_pmf(1, 2, 1), 0.91)
+    assert np.isclose(geom.order_statistic_cdf(1, 2, 2), 0.49)
+
+
+def test_binomial():
+    """Test binomial order statistics."""
+    binom = RVBinomialStatistics(3, 0.25)
+
+    p_0 = 0.75**3
+    p_1 = 3 * 0.25 * 0.75**2
+    assert np.isclose(binom.pmf(1), p_1)
+    assert np.isclose(binom.cdf(1), p_0 + p_1)
+
+    assert np.isclose(binom.order_statistic_pmf(0, 2, 1), 1 - (1 - p_0) ** 2)
+    assert np.isclose(binom.order_statistic_cdf(0, 2, 1), 1 - (1 - p_0) ** 2)

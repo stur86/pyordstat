@@ -46,7 +46,14 @@ def ordstat_cdf(cdf: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
 
     j = np.arange(k, n + 1)
     bc = binom(n, j)
+    is_scalar = np.isscalar(cdf)
+    cdf = np.atleast_1d(cdf)
     cdf1 = cdf[None, :] ** j[:, None]
     cdf2 = (1 - cdf[None, :]) ** (n - j)[:, None]
 
-    return np.sum(bc[:, None] * cdf1 * cdf2, axis=0)
+    ans = np.sum(bc[:, None] * cdf1 * cdf2, axis=0)
+
+    if is_scalar:
+        return ans[0]
+
+    return ans
