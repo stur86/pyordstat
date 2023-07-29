@@ -57,10 +57,13 @@
                                 <a class="variable" href="#FiniteOrderStatistics.pdf">pdf</a>
                         </li>
                         <li>
+                                <a class="variable" href="#FiniteOrderStatistics.pmf">pmf</a>
+                        </li>
+                        <li>
                                 <a class="variable" href="#FiniteOrderStatistics.cdf">cdf</a>
                         </li>
                         <li>
-                                <a class="function" href="#FiniteOrderStatistics.order_statistic_pdf">order_statistic_pdf</a>
+                                <a class="function" href="#FiniteOrderStatistics.order_statistic_pmf">order_statistic_pmf</a>
                         </li>
                         <li>
                                 <a class="function" href="#FiniteOrderStatistics.order_statistic_cdf">order_statistic_cdf</a>
@@ -89,6 +92,24 @@
                 </ul>
 
             </li>
+            <li>
+                    <a class="class" href="#RVContOrderStatistics">RVContOrderStatistics</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#RVContOrderStatistics.__init__">RVContOrderStatistics</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#RVDiscrOrderStatistics">RVDiscrOrderStatistics</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#RVDiscrOrderStatistics.__init__">RVDiscrOrderStatistics</a>
+                        </li>
+                </ul>
+
+            </li>
     </ul>
 
 
@@ -112,12 +133,20 @@ pyordstat    </h1>
 
                         <label class="view-source-button" for="mod-pyordstat-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="sd">&quot;&quot;&quot;pyordstat package.&quot;&quot;&quot;</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="kn">from</span> <span class="nn">pyordstat.continuous</span> <span class="kn">import</span> <span class="n">ContinuousOrderStatistics</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a><span class="kn">from</span> <span class="nn">pyordstat.discrete</span> <span class="kn">import</span> <span class="n">DiscreteOrderStatistics</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">pyordstat.finite</span> <span class="kn">import</span> <span class="n">FiniteOrderStatistics</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ContinuousOrderStatistics&quot;</span><span class="p">,</span> <span class="s2">&quot;FiniteOrderStatistics&quot;</span><span class="p">,</span> <span class="s2">&quot;DiscreteOrderStatistics&quot;</span><span class="p">]</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;pyordstat package.&quot;&quot;&quot;</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">from</span> <span class="nn">pyordstat.continuous</span> <span class="kn">import</span> <span class="n">ContinuousOrderStatistics</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">from</span> <span class="nn">pyordstat.discrete</span> <span class="kn">import</span> <span class="n">DiscreteOrderStatistics</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">pyordstat.finite</span> <span class="kn">import</span> <span class="n">FiniteOrderStatistics</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span> <span class="nn">pyordstat.functions.rv_continuous</span> <span class="kn">import</span> <span class="n">RVContOrderStatistics</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="kn">from</span> <span class="nn">pyordstat.functions.rv_discrete</span> <span class="kn">import</span> <span class="n">RVDiscrOrderStatistics</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="s2">&quot;ContinuousOrderStatistics&quot;</span><span class="p">,</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="s2">&quot;FiniteOrderStatistics&quot;</span><span class="p">,</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="s2">&quot;DiscreteOrderStatistics&quot;</span><span class="p">,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="s2">&quot;RVContOrderStatistics&quot;</span><span class="p">,</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>    <span class="s2">&quot;RVDiscrOrderStatistics&quot;</span><span class="p">,</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="p">]</span>
 </span></pre></div>
 
 
@@ -206,7 +235,7 @@ pyordstat    </h1>
 </span><span id="ContinuousOrderStatistics-82"><a href="#ContinuousOrderStatistics-82"><span class="linenos"> 82</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
 </span><span id="ContinuousOrderStatistics-83"><a href="#ContinuousOrderStatistics-83"><span class="linenos"> 83</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the k-th order statistic PDF of a sample of size n.</span>
 </span><span id="ContinuousOrderStatistics-84"><a href="#ContinuousOrderStatistics-84"><span class="linenos"> 84</span></a>
-</span><span id="ContinuousOrderStatistics-85"><a href="#ContinuousOrderStatistics-85"><span class="linenos"> 85</span></a><span class="sd">        Return the k-th order statistic probability density function of a sample of size n</span>
+</span><span id="ContinuousOrderStatistics-85"><a href="#ContinuousOrderStatistics-85"><span class="linenos"> 85</span></a><span class="sd">        Return the k-th order statistic cumulative distribution function of a sample of size n</span>
 </span><span id="ContinuousOrderStatistics-86"><a href="#ContinuousOrderStatistics-86"><span class="linenos"> 86</span></a><span class="sd">        from a continuous distribution, given the values in x.</span>
 </span><span id="ContinuousOrderStatistics-87"><a href="#ContinuousOrderStatistics-87"><span class="linenos"> 87</span></a>
 </span><span id="ContinuousOrderStatistics-88"><a href="#ContinuousOrderStatistics-88"><span class="linenos"> 88</span></a><span class="sd">        Args:</span>
@@ -397,7 +426,7 @@ from a continuous distribution, given the values in x.</p>
             <div class="pdoc-code codehilite"><pre><span></span><span id="ContinuousOrderStatistics.order_statistic_cdf-82"><a href="#ContinuousOrderStatistics.order_statistic_cdf-82"><span class="linenos"> 82</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
 </span><span id="ContinuousOrderStatistics.order_statistic_cdf-83"><a href="#ContinuousOrderStatistics.order_statistic_cdf-83"><span class="linenos"> 83</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the k-th order statistic PDF of a sample of size n.</span>
 </span><span id="ContinuousOrderStatistics.order_statistic_cdf-84"><a href="#ContinuousOrderStatistics.order_statistic_cdf-84"><span class="linenos"> 84</span></a>
-</span><span id="ContinuousOrderStatistics.order_statistic_cdf-85"><a href="#ContinuousOrderStatistics.order_statistic_cdf-85"><span class="linenos"> 85</span></a><span class="sd">        Return the k-th order statistic probability density function of a sample of size n</span>
+</span><span id="ContinuousOrderStatistics.order_statistic_cdf-85"><a href="#ContinuousOrderStatistics.order_statistic_cdf-85"><span class="linenos"> 85</span></a><span class="sd">        Return the k-th order statistic cumulative distribution function of a sample of size n</span>
 </span><span id="ContinuousOrderStatistics.order_statistic_cdf-86"><a href="#ContinuousOrderStatistics.order_statistic_cdf-86"><span class="linenos"> 86</span></a><span class="sd">        from a continuous distribution, given the values in x.</span>
 </span><span id="ContinuousOrderStatistics.order_statistic_cdf-87"><a href="#ContinuousOrderStatistics.order_statistic_cdf-87"><span class="linenos"> 87</span></a>
 </span><span id="ContinuousOrderStatistics.order_statistic_cdf-88"><a href="#ContinuousOrderStatistics.order_statistic_cdf-88"><span class="linenos"> 88</span></a><span class="sd">        Args:</span>
@@ -424,7 +453,7 @@ from a continuous distribution, given the values in x.</p>
 
             <div class="docstring"><p>Calculate the k-th order statistic PDF of a sample of size n.</p>
 
-<p>Return the k-th order statistic probability density function of a sample of size n
+<p>Return the k-th order statistic cumulative distribution function of a sample of size n
 from a continuous distribution, given the values in x.</p>
 
 <h6 id="arguments">Arguments:</h6>
@@ -467,27 +496,27 @@ from a continuous distribution, given the values in x.</p>
 </span><span id="FiniteOrderStatistics-14"><a href="#FiniteOrderStatistics-14"><span class="linenos">14</span></a>    <span class="n">_pdf</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]</span>
 </span><span id="FiniteOrderStatistics-15"><a href="#FiniteOrderStatistics-15"><span class="linenos">15</span></a>    <span class="n">_cdf</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]</span>
 </span><span id="FiniteOrderStatistics-16"><a href="#FiniteOrderStatistics-16"><span class="linenos">16</span></a>
-</span><span id="FiniteOrderStatistics-17"><a href="#FiniteOrderStatistics-17"><span class="linenos">17</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">pdf</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="FiniteOrderStatistics-17"><a href="#FiniteOrderStatistics-17"><span class="linenos">17</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">pmf</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="FiniteOrderStatistics-18"><a href="#FiniteOrderStatistics-18"><span class="linenos">18</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a discrete order statistics distribution.</span>
 </span><span id="FiniteOrderStatistics-19"><a href="#FiniteOrderStatistics-19"><span class="linenos">19</span></a>
-</span><span id="FiniteOrderStatistics-20"><a href="#FiniteOrderStatistics-20"><span class="linenos">20</span></a><span class="sd">        Requires the values of the random variable and the probability density function.</span>
+</span><span id="FiniteOrderStatistics-20"><a href="#FiniteOrderStatistics-20"><span class="linenos">20</span></a><span class="sd">        Requires the values of the random variable and the probability mass function.</span>
 </span><span id="FiniteOrderStatistics-21"><a href="#FiniteOrderStatistics-21"><span class="linenos">21</span></a><span class="sd">        The x values can be in any order, but the pdf values must be in the same order</span>
 </span><span id="FiniteOrderStatistics-22"><a href="#FiniteOrderStatistics-22"><span class="linenos">22</span></a><span class="sd">        as the x values, and they will be sorted in ascending order.</span>
 </span><span id="FiniteOrderStatistics-23"><a href="#FiniteOrderStatistics-23"><span class="linenos">23</span></a>
 </span><span id="FiniteOrderStatistics-24"><a href="#FiniteOrderStatistics-24"><span class="linenos">24</span></a><span class="sd">        Args:</span>
 </span><span id="FiniteOrderStatistics-25"><a href="#FiniteOrderStatistics-25"><span class="linenos">25</span></a><span class="sd">            x (NDArray[np.number]): Support of the distribution.</span>
-</span><span id="FiniteOrderStatistics-26"><a href="#FiniteOrderStatistics-26"><span class="linenos">26</span></a><span class="sd">            pdf (NDArray[np.number]): Probability density function of the distribution.</span>
+</span><span id="FiniteOrderStatistics-26"><a href="#FiniteOrderStatistics-26"><span class="linenos">26</span></a><span class="sd">            pdf (NDArray[np.number]): Probability mass function of the distribution.</span>
 </span><span id="FiniteOrderStatistics-27"><a href="#FiniteOrderStatistics-27"><span class="linenos">27</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FiniteOrderStatistics-28"><a href="#FiniteOrderStatistics-28"><span class="linenos">28</span></a>        <span class="n">isort</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </span><span id="FiniteOrderStatistics-29"><a href="#FiniteOrderStatistics-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="n">isort</span><span class="p">]</span>
-</span><span id="FiniteOrderStatistics-30"><a href="#FiniteOrderStatistics-30"><span class="linenos">30</span></a>        <span class="n">pdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pdf</span><span class="p">)[</span><span class="n">isort</span><span class="p">]</span>
-</span><span id="FiniteOrderStatistics-31"><a href="#FiniteOrderStatistics-31"><span class="linenos">31</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics-30"><a href="#FiniteOrderStatistics-30"><span class="linenos">30</span></a>        <span class="n">pmf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pmf</span><span class="p">)[</span><span class="n">isort</span><span class="p">]</span>
+</span><span id="FiniteOrderStatistics-31"><a href="#FiniteOrderStatistics-31"><span class="linenos">31</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
 </span><span id="FiniteOrderStatistics-32"><a href="#FiniteOrderStatistics-32"><span class="linenos">32</span></a>
 </span><span id="FiniteOrderStatistics-33"><a href="#FiniteOrderStatistics-33"><span class="linenos">33</span></a>        <span class="c1"># Normalize</span>
-</span><span id="FiniteOrderStatistics-34"><a href="#FiniteOrderStatistics-34"><span class="linenos">34</span></a>        <span class="n">pdf</span> <span class="o">=</span> <span class="n">pdf</span> <span class="o">/</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="FiniteOrderStatistics-34"><a href="#FiniteOrderStatistics-34"><span class="linenos">34</span></a>        <span class="n">pmf</span> <span class="o">=</span> <span class="n">pmf</span> <span class="o">/</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="FiniteOrderStatistics-35"><a href="#FiniteOrderStatistics-35"><span class="linenos">35</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="n">cdf</span> <span class="o">/</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="FiniteOrderStatistics-36"><a href="#FiniteOrderStatistics-36"><span class="linenos">36</span></a>
-</span><span id="FiniteOrderStatistics-37"><a href="#FiniteOrderStatistics-37"><span class="linenos">37</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pdf</span><span class="p">,</span> <span class="n">cdf</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics-37"><a href="#FiniteOrderStatistics-37"><span class="linenos">37</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pmf</span><span class="p">,</span> <span class="n">cdf</span><span class="p">)</span>
 </span><span id="FiniteOrderStatistics-38"><a href="#FiniteOrderStatistics-38"><span class="linenos">38</span></a>
 </span><span id="FiniteOrderStatistics-39"><a href="#FiniteOrderStatistics-39"><span class="linenos">39</span></a>    <span class="nd">@property</span>
 </span><span id="FiniteOrderStatistics-40"><a href="#FiniteOrderStatistics-40"><span class="linenos">40</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
@@ -496,40 +525,45 @@ from a continuous distribution, given the values in x.</p>
 </span><span id="FiniteOrderStatistics-43"><a href="#FiniteOrderStatistics-43"><span class="linenos">43</span></a>
 </span><span id="FiniteOrderStatistics-44"><a href="#FiniteOrderStatistics-44"><span class="linenos">44</span></a>    <span class="nd">@property</span>
 </span><span id="FiniteOrderStatistics-45"><a href="#FiniteOrderStatistics-45"><span class="linenos">45</span></a>    <span class="k">def</span> <span class="nf">pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="FiniteOrderStatistics-46"><a href="#FiniteOrderStatistics-46"><span class="linenos">46</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Probability density function.&quot;&quot;&quot;</span>
-</span><span id="FiniteOrderStatistics-47"><a href="#FiniteOrderStatistics-47"><span class="linenos">47</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pdf</span>
+</span><span id="FiniteOrderStatistics-46"><a href="#FiniteOrderStatistics-46"><span class="linenos">46</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Probability density function of order statistics.&quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics-47"><a href="#FiniteOrderStatistics-47"><span class="linenos">47</span></a>        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;PDF not implemented for discrete order statistics.&quot;</span><span class="p">)</span>
 </span><span id="FiniteOrderStatistics-48"><a href="#FiniteOrderStatistics-48"><span class="linenos">48</span></a>
 </span><span id="FiniteOrderStatistics-49"><a href="#FiniteOrderStatistics-49"><span class="linenos">49</span></a>    <span class="nd">@property</span>
-</span><span id="FiniteOrderStatistics-50"><a href="#FiniteOrderStatistics-50"><span class="linenos">50</span></a>    <span class="k">def</span> <span class="nf">cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="FiniteOrderStatistics-51"><a href="#FiniteOrderStatistics-51"><span class="linenos">51</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cumulative distribution function.&quot;&quot;&quot;</span>
-</span><span id="FiniteOrderStatistics-52"><a href="#FiniteOrderStatistics-52"><span class="linenos">52</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span>
+</span><span id="FiniteOrderStatistics-50"><a href="#FiniteOrderStatistics-50"><span class="linenos">50</span></a>    <span class="k">def</span> <span class="nf">pmf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="FiniteOrderStatistics-51"><a href="#FiniteOrderStatistics-51"><span class="linenos">51</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Probability mass function of order statistics.&quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics-52"><a href="#FiniteOrderStatistics-52"><span class="linenos">52</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pdf</span>
 </span><span id="FiniteOrderStatistics-53"><a href="#FiniteOrderStatistics-53"><span class="linenos">53</span></a>
-</span><span id="FiniteOrderStatistics-54"><a href="#FiniteOrderStatistics-54"><span class="linenos">54</span></a>    <span class="k">def</span> <span class="nf">order_statistic_pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="FiniteOrderStatistics-55"><a href="#FiniteOrderStatistics-55"><span class="linenos">55</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic probability density function.</span>
-</span><span id="FiniteOrderStatistics-56"><a href="#FiniteOrderStatistics-56"><span class="linenos">56</span></a>
-</span><span id="FiniteOrderStatistics-57"><a href="#FiniteOrderStatistics-57"><span class="linenos">57</span></a><span class="sd">        Args:</span>
-</span><span id="FiniteOrderStatistics-58"><a href="#FiniteOrderStatistics-58"><span class="linenos">58</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="FiniteOrderStatistics-59"><a href="#FiniteOrderStatistics-59"><span class="linenos">59</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
-</span><span id="FiniteOrderStatistics-60"><a href="#FiniteOrderStatistics-60"><span class="linenos">60</span></a>
-</span><span id="FiniteOrderStatistics-61"><a href="#FiniteOrderStatistics-61"><span class="linenos">61</span></a><span class="sd">        Returns</span>
-</span><span id="FiniteOrderStatistics-62"><a href="#FiniteOrderStatistics-62"><span class="linenos">62</span></a><span class="sd">        -------</span>
-</span><span id="FiniteOrderStatistics-63"><a href="#FiniteOrderStatistics-63"><span class="linenos">63</span></a><span class="sd">            NDArray[np.number]: Probability density function of the k-th order statistic.</span>
-</span><span id="FiniteOrderStatistics-64"><a href="#FiniteOrderStatistics-64"><span class="linenos">64</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="FiniteOrderStatistics-65"><a href="#FiniteOrderStatistics-65"><span class="linenos">65</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</span><span id="FiniteOrderStatistics-66"><a href="#FiniteOrderStatistics-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="FiniteOrderStatistics-67"><a href="#FiniteOrderStatistics-67"><span class="linenos">67</span></a>
-</span><span id="FiniteOrderStatistics-68"><a href="#FiniteOrderStatistics-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="FiniteOrderStatistics-69"><a href="#FiniteOrderStatistics-69"><span class="linenos">69</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic cumulative distribution function.</span>
-</span><span id="FiniteOrderStatistics-70"><a href="#FiniteOrderStatistics-70"><span class="linenos">70</span></a>
-</span><span id="FiniteOrderStatistics-71"><a href="#FiniteOrderStatistics-71"><span class="linenos">71</span></a><span class="sd">        Args:</span>
-</span><span id="FiniteOrderStatistics-72"><a href="#FiniteOrderStatistics-72"><span class="linenos">72</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="FiniteOrderStatistics-73"><a href="#FiniteOrderStatistics-73"><span class="linenos">73</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
-</span><span id="FiniteOrderStatistics-74"><a href="#FiniteOrderStatistics-74"><span class="linenos">74</span></a>
-</span><span id="FiniteOrderStatistics-75"><a href="#FiniteOrderStatistics-75"><span class="linenos">75</span></a><span class="sd">        Returns</span>
-</span><span id="FiniteOrderStatistics-76"><a href="#FiniteOrderStatistics-76"><span class="linenos">76</span></a><span class="sd">        -------</span>
-</span><span id="FiniteOrderStatistics-77"><a href="#FiniteOrderStatistics-77"><span class="linenos">77</span></a><span class="sd">            NDArray[np.number]: Cumulative distribution function of the k-th order statistic.</span>
-</span><span id="FiniteOrderStatistics-78"><a href="#FiniteOrderStatistics-78"><span class="linenos">78</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="FiniteOrderStatistics-79"><a href="#FiniteOrderStatistics-79"><span class="linenos">79</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics-54"><a href="#FiniteOrderStatistics-54"><span class="linenos">54</span></a>    <span class="nd">@property</span>
+</span><span id="FiniteOrderStatistics-55"><a href="#FiniteOrderStatistics-55"><span class="linenos">55</span></a>    <span class="k">def</span> <span class="nf">cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="FiniteOrderStatistics-56"><a href="#FiniteOrderStatistics-56"><span class="linenos">56</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cumulative distribution function.&quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics-57"><a href="#FiniteOrderStatistics-57"><span class="linenos">57</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span>
+</span><span id="FiniteOrderStatistics-58"><a href="#FiniteOrderStatistics-58"><span class="linenos">58</span></a>
+</span><span id="FiniteOrderStatistics-59"><a href="#FiniteOrderStatistics-59"><span class="linenos">59</span></a>    <span class="k">def</span> <span class="nf">order_statistic_pmf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="FiniteOrderStatistics-60"><a href="#FiniteOrderStatistics-60"><span class="linenos">60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic probability mass function.</span>
+</span><span id="FiniteOrderStatistics-61"><a href="#FiniteOrderStatistics-61"><span class="linenos">61</span></a>
+</span><span id="FiniteOrderStatistics-62"><a href="#FiniteOrderStatistics-62"><span class="linenos">62</span></a><span class="sd">        Args:</span>
+</span><span id="FiniteOrderStatistics-63"><a href="#FiniteOrderStatistics-63"><span class="linenos">63</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="FiniteOrderStatistics-64"><a href="#FiniteOrderStatistics-64"><span class="linenos">64</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
+</span><span id="FiniteOrderStatistics-65"><a href="#FiniteOrderStatistics-65"><span class="linenos">65</span></a>
+</span><span id="FiniteOrderStatistics-66"><a href="#FiniteOrderStatistics-66"><span class="linenos">66</span></a><span class="sd">        Returns</span>
+</span><span id="FiniteOrderStatistics-67"><a href="#FiniteOrderStatistics-67"><span class="linenos">67</span></a><span class="sd">        -------</span>
+</span><span id="FiniteOrderStatistics-68"><a href="#FiniteOrderStatistics-68"><span class="linenos">68</span></a><span class="sd">            NDArray[np.number]: Probability mass function of the k-th order statistic.</span>
+</span><span id="FiniteOrderStatistics-69"><a href="#FiniteOrderStatistics-69"><span class="linenos">69</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics-70"><a href="#FiniteOrderStatistics-70"><span class="linenos">70</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics-71"><a href="#FiniteOrderStatistics-71"><span class="linenos">71</span></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics-72"><a href="#FiniteOrderStatistics-72"><span class="linenos">72</span></a>
+</span><span id="FiniteOrderStatistics-73"><a href="#FiniteOrderStatistics-73"><span class="linenos">73</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="FiniteOrderStatistics-74"><a href="#FiniteOrderStatistics-74"><span class="linenos">74</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic cumulative distribution function.</span>
+</span><span id="FiniteOrderStatistics-75"><a href="#FiniteOrderStatistics-75"><span class="linenos">75</span></a>
+</span><span id="FiniteOrderStatistics-76"><a href="#FiniteOrderStatistics-76"><span class="linenos">76</span></a><span class="sd">        Args:</span>
+</span><span id="FiniteOrderStatistics-77"><a href="#FiniteOrderStatistics-77"><span class="linenos">77</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="FiniteOrderStatistics-78"><a href="#FiniteOrderStatistics-78"><span class="linenos">78</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
+</span><span id="FiniteOrderStatistics-79"><a href="#FiniteOrderStatistics-79"><span class="linenos">79</span></a>
+</span><span id="FiniteOrderStatistics-80"><a href="#FiniteOrderStatistics-80"><span class="linenos">80</span></a><span class="sd">        Returns</span>
+</span><span id="FiniteOrderStatistics-81"><a href="#FiniteOrderStatistics-81"><span class="linenos">81</span></a><span class="sd">        -------</span>
+</span><span id="FiniteOrderStatistics-82"><a href="#FiniteOrderStatistics-82"><span class="linenos">82</span></a><span class="sd">            NDArray[np.number]: Cumulative distribution function of the k-th order statistic.</span>
+</span><span id="FiniteOrderStatistics-83"><a href="#FiniteOrderStatistics-83"><span class="linenos">83</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics-84"><a href="#FiniteOrderStatistics-84"><span class="linenos">84</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -541,39 +575,39 @@ from a continuous distribution, given the values in x.</p>
                                         <input id="FiniteOrderStatistics.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">FiniteOrderStatistics</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">x</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">number</span><span class="p">]]</span>,</span><span class="param">	<span class="n">pdf</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">number</span><span class="p">]]</span></span>)</span>
+        <span class="name">FiniteOrderStatistics</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">x</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">number</span><span class="p">]]</span>,</span><span class="param">	<span class="n">pmf</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">number</span><span class="p">]]</span></span>)</span>
 
                 <label class="view-source-button" for="FiniteOrderStatistics.__init__-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#FiniteOrderStatistics.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FiniteOrderStatistics.__init__-17"><a href="#FiniteOrderStatistics.__init__-17"><span class="linenos">17</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">pdf</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FiniteOrderStatistics.__init__-17"><a href="#FiniteOrderStatistics.__init__-17"><span class="linenos">17</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">pmf</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="FiniteOrderStatistics.__init__-18"><a href="#FiniteOrderStatistics.__init__-18"><span class="linenos">18</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a discrete order statistics distribution.</span>
 </span><span id="FiniteOrderStatistics.__init__-19"><a href="#FiniteOrderStatistics.__init__-19"><span class="linenos">19</span></a>
-</span><span id="FiniteOrderStatistics.__init__-20"><a href="#FiniteOrderStatistics.__init__-20"><span class="linenos">20</span></a><span class="sd">        Requires the values of the random variable and the probability density function.</span>
+</span><span id="FiniteOrderStatistics.__init__-20"><a href="#FiniteOrderStatistics.__init__-20"><span class="linenos">20</span></a><span class="sd">        Requires the values of the random variable and the probability mass function.</span>
 </span><span id="FiniteOrderStatistics.__init__-21"><a href="#FiniteOrderStatistics.__init__-21"><span class="linenos">21</span></a><span class="sd">        The x values can be in any order, but the pdf values must be in the same order</span>
 </span><span id="FiniteOrderStatistics.__init__-22"><a href="#FiniteOrderStatistics.__init__-22"><span class="linenos">22</span></a><span class="sd">        as the x values, and they will be sorted in ascending order.</span>
 </span><span id="FiniteOrderStatistics.__init__-23"><a href="#FiniteOrderStatistics.__init__-23"><span class="linenos">23</span></a>
 </span><span id="FiniteOrderStatistics.__init__-24"><a href="#FiniteOrderStatistics.__init__-24"><span class="linenos">24</span></a><span class="sd">        Args:</span>
 </span><span id="FiniteOrderStatistics.__init__-25"><a href="#FiniteOrderStatistics.__init__-25"><span class="linenos">25</span></a><span class="sd">            x (NDArray[np.number]): Support of the distribution.</span>
-</span><span id="FiniteOrderStatistics.__init__-26"><a href="#FiniteOrderStatistics.__init__-26"><span class="linenos">26</span></a><span class="sd">            pdf (NDArray[np.number]): Probability density function of the distribution.</span>
+</span><span id="FiniteOrderStatistics.__init__-26"><a href="#FiniteOrderStatistics.__init__-26"><span class="linenos">26</span></a><span class="sd">            pdf (NDArray[np.number]): Probability mass function of the distribution.</span>
 </span><span id="FiniteOrderStatistics.__init__-27"><a href="#FiniteOrderStatistics.__init__-27"><span class="linenos">27</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="FiniteOrderStatistics.__init__-28"><a href="#FiniteOrderStatistics.__init__-28"><span class="linenos">28</span></a>        <span class="n">isort</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </span><span id="FiniteOrderStatistics.__init__-29"><a href="#FiniteOrderStatistics.__init__-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="n">isort</span><span class="p">]</span>
-</span><span id="FiniteOrderStatistics.__init__-30"><a href="#FiniteOrderStatistics.__init__-30"><span class="linenos">30</span></a>        <span class="n">pdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pdf</span><span class="p">)[</span><span class="n">isort</span><span class="p">]</span>
-</span><span id="FiniteOrderStatistics.__init__-31"><a href="#FiniteOrderStatistics.__init__-31"><span class="linenos">31</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics.__init__-30"><a href="#FiniteOrderStatistics.__init__-30"><span class="linenos">30</span></a>        <span class="n">pmf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pmf</span><span class="p">)[</span><span class="n">isort</span><span class="p">]</span>
+</span><span id="FiniteOrderStatistics.__init__-31"><a href="#FiniteOrderStatistics.__init__-31"><span class="linenos">31</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
 </span><span id="FiniteOrderStatistics.__init__-32"><a href="#FiniteOrderStatistics.__init__-32"><span class="linenos">32</span></a>
 </span><span id="FiniteOrderStatistics.__init__-33"><a href="#FiniteOrderStatistics.__init__-33"><span class="linenos">33</span></a>        <span class="c1"># Normalize</span>
-</span><span id="FiniteOrderStatistics.__init__-34"><a href="#FiniteOrderStatistics.__init__-34"><span class="linenos">34</span></a>        <span class="n">pdf</span> <span class="o">=</span> <span class="n">pdf</span> <span class="o">/</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="FiniteOrderStatistics.__init__-34"><a href="#FiniteOrderStatistics.__init__-34"><span class="linenos">34</span></a>        <span class="n">pmf</span> <span class="o">=</span> <span class="n">pmf</span> <span class="o">/</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="FiniteOrderStatistics.__init__-35"><a href="#FiniteOrderStatistics.__init__-35"><span class="linenos">35</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="n">cdf</span> <span class="o">/</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="FiniteOrderStatistics.__init__-36"><a href="#FiniteOrderStatistics.__init__-36"><span class="linenos">36</span></a>
-</span><span id="FiniteOrderStatistics.__init__-37"><a href="#FiniteOrderStatistics.__init__-37"><span class="linenos">37</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pdf</span><span class="p">,</span> <span class="n">cdf</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics.__init__-37"><a href="#FiniteOrderStatistics.__init__-37"><span class="linenos">37</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pmf</span><span class="p">,</span> <span class="n">cdf</span><span class="p">)</span>
 </span></pre></div>
 
 
             <div class="docstring"><p>Create a discrete order statistics distribution.</p>
 
-<p>Requires the values of the random variable and the probability density function.
+<p>Requires the values of the random variable and the probability mass function.
 The x values can be in any order, but the pdf values must be in the same order
 as the x values, and they will be sorted in ascending order.</p>
 
@@ -581,7 +615,7 @@ as the x values, and they will be sorted in ascending order.</p>
 
 <ul>
 <li><strong>x (NDArray[np.number]):</strong>  Support of the distribution.</li>
-<li><strong>pdf (NDArray[np.number]):</strong>  Probability density function of the distribution.</li>
+<li><strong>pdf (NDArray[np.number]):</strong>  Probability mass function of the distribution.</li>
 </ul>
 </div>
 
@@ -608,7 +642,20 @@ as the x values, and they will be sorted in ascending order.</p>
     </div>
     <a class="headerlink" href="#FiniteOrderStatistics.pdf"></a>
     
-            <div class="docstring"><p>Probability density function.</p>
+            <div class="docstring"><p>Probability density function of order statistics.</p>
+</div>
+
+
+                            </div>
+                            <div id="FiniteOrderStatistics.pmf" class="classattr">
+                                <div class="attr variable">
+            <span class="name">pmf</span><span class="annotation">: numpy.ndarray[typing.Any, numpy.dtype[numpy.number]]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#FiniteOrderStatistics.pmf"></a>
+    
+            <div class="docstring"><p>Probability mass function of order statistics.</p>
 </div>
 
 
@@ -626,34 +673,34 @@ as the x values, and they will be sorted in ascending order.</p>
 
 
                             </div>
-                            <div id="FiniteOrderStatistics.order_statistic_pdf" class="classattr">
-                                        <input id="FiniteOrderStatistics.order_statistic_pdf-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="FiniteOrderStatistics.order_statistic_pmf" class="classattr">
+                                        <input id="FiniteOrderStatistics.order_statistic_pmf-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">order_statistic_pdf</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">n</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">k</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">number</span><span class="p">]]</span>:</span></span>
+        <span class="name">order_statistic_pmf</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">n</span><span class="p">:</span> <span class="nb">int</span>,</span><span class="param">	<span class="n">k</span><span class="p">:</span> <span class="nb">int</span></span><span class="return-annotation">) -> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">number</span><span class="p">]]</span>:</span></span>
 
-                <label class="view-source-button" for="FiniteOrderStatistics.order_statistic_pdf-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="FiniteOrderStatistics.order_statistic_pmf-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#FiniteOrderStatistics.order_statistic_pdf"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FiniteOrderStatistics.order_statistic_pdf-54"><a href="#FiniteOrderStatistics.order_statistic_pdf-54"><span class="linenos">54</span></a>    <span class="k">def</span> <span class="nf">order_statistic_pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-55"><a href="#FiniteOrderStatistics.order_statistic_pdf-55"><span class="linenos">55</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic probability density function.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-56"><a href="#FiniteOrderStatistics.order_statistic_pdf-56"><span class="linenos">56</span></a>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-57"><a href="#FiniteOrderStatistics.order_statistic_pdf-57"><span class="linenos">57</span></a><span class="sd">        Args:</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-58"><a href="#FiniteOrderStatistics.order_statistic_pdf-58"><span class="linenos">58</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-59"><a href="#FiniteOrderStatistics.order_statistic_pdf-59"><span class="linenos">59</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-60"><a href="#FiniteOrderStatistics.order_statistic_pdf-60"><span class="linenos">60</span></a>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-61"><a href="#FiniteOrderStatistics.order_statistic_pdf-61"><span class="linenos">61</span></a><span class="sd">        Returns</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-62"><a href="#FiniteOrderStatistics.order_statistic_pdf-62"><span class="linenos">62</span></a><span class="sd">        -------</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-63"><a href="#FiniteOrderStatistics.order_statistic_pdf-63"><span class="linenos">63</span></a><span class="sd">            NDArray[np.number]: Probability density function of the k-th order statistic.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-64"><a href="#FiniteOrderStatistics.order_statistic_pdf-64"><span class="linenos">64</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-65"><a href="#FiniteOrderStatistics.order_statistic_pdf-65"><span class="linenos">65</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</span><span id="FiniteOrderStatistics.order_statistic_pdf-66"><a href="#FiniteOrderStatistics.order_statistic_pdf-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <a class="headerlink" href="#FiniteOrderStatistics.order_statistic_pmf"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FiniteOrderStatistics.order_statistic_pmf-59"><a href="#FiniteOrderStatistics.order_statistic_pmf-59"><span class="linenos">59</span></a>    <span class="k">def</span> <span class="nf">order_statistic_pmf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-60"><a href="#FiniteOrderStatistics.order_statistic_pmf-60"><span class="linenos">60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic probability mass function.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-61"><a href="#FiniteOrderStatistics.order_statistic_pmf-61"><span class="linenos">61</span></a>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-62"><a href="#FiniteOrderStatistics.order_statistic_pmf-62"><span class="linenos">62</span></a><span class="sd">        Args:</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-63"><a href="#FiniteOrderStatistics.order_statistic_pmf-63"><span class="linenos">63</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-64"><a href="#FiniteOrderStatistics.order_statistic_pmf-64"><span class="linenos">64</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-65"><a href="#FiniteOrderStatistics.order_statistic_pmf-65"><span class="linenos">65</span></a>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-66"><a href="#FiniteOrderStatistics.order_statistic_pmf-66"><span class="linenos">66</span></a><span class="sd">        Returns</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-67"><a href="#FiniteOrderStatistics.order_statistic_pmf-67"><span class="linenos">67</span></a><span class="sd">        -------</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-68"><a href="#FiniteOrderStatistics.order_statistic_pmf-68"><span class="linenos">68</span></a><span class="sd">            NDArray[np.number]: Probability mass function of the k-th order statistic.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-69"><a href="#FiniteOrderStatistics.order_statistic_pmf-69"><span class="linenos">69</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-70"><a href="#FiniteOrderStatistics.order_statistic_pmf-70"><span class="linenos">70</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="FiniteOrderStatistics.order_statistic_pmf-71"><a href="#FiniteOrderStatistics.order_statistic_pmf-71"><span class="linenos">71</span></a>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Order statistic probability density function.</p>
+            <div class="docstring"><p>Order statistic probability mass function.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
@@ -664,7 +711,7 @@ as the x values, and they will be sorted in ascending order.</p>
 
 <h2 id="returns">Returns</h2>
 
-<pre><code>NDArray[np.number]: Probability density function of the k-th order statistic.
+<pre><code>NDArray[np.number]: Probability mass function of the k-th order statistic.
 </code></pre>
 </div>
 
@@ -681,18 +728,18 @@ as the x values, and they will be sorted in ascending order.</p>
 
     </div>
     <a class="headerlink" href="#FiniteOrderStatistics.order_statistic_cdf"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="FiniteOrderStatistics.order_statistic_cdf-68"><a href="#FiniteOrderStatistics.order_statistic_cdf-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-69"><a href="#FiniteOrderStatistics.order_statistic_cdf-69"><span class="linenos">69</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic cumulative distribution function.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-70"><a href="#FiniteOrderStatistics.order_statistic_cdf-70"><span class="linenos">70</span></a>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-71"><a href="#FiniteOrderStatistics.order_statistic_cdf-71"><span class="linenos">71</span></a><span class="sd">        Args:</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-72"><a href="#FiniteOrderStatistics.order_statistic_cdf-72"><span class="linenos">72</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-73"><a href="#FiniteOrderStatistics.order_statistic_cdf-73"><span class="linenos">73</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-74"><a href="#FiniteOrderStatistics.order_statistic_cdf-74"><span class="linenos">74</span></a>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-75"><a href="#FiniteOrderStatistics.order_statistic_cdf-75"><span class="linenos">75</span></a><span class="sd">        Returns</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-76"><a href="#FiniteOrderStatistics.order_statistic_cdf-76"><span class="linenos">76</span></a><span class="sd">        -------</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-77"><a href="#FiniteOrderStatistics.order_statistic_cdf-77"><span class="linenos">77</span></a><span class="sd">            NDArray[np.number]: Cumulative distribution function of the k-th order statistic.</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-78"><a href="#FiniteOrderStatistics.order_statistic_cdf-78"><span class="linenos">78</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="FiniteOrderStatistics.order_statistic_cdf-79"><a href="#FiniteOrderStatistics.order_statistic_cdf-79"><span class="linenos">79</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FiniteOrderStatistics.order_statistic_cdf-73"><a href="#FiniteOrderStatistics.order_statistic_cdf-73"><span class="linenos">73</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-74"><a href="#FiniteOrderStatistics.order_statistic_cdf-74"><span class="linenos">74</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Order statistic cumulative distribution function.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-75"><a href="#FiniteOrderStatistics.order_statistic_cdf-75"><span class="linenos">75</span></a>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-76"><a href="#FiniteOrderStatistics.order_statistic_cdf-76"><span class="linenos">76</span></a><span class="sd">        Args:</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-77"><a href="#FiniteOrderStatistics.order_statistic_cdf-77"><span class="linenos">77</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-78"><a href="#FiniteOrderStatistics.order_statistic_cdf-78"><span class="linenos">78</span></a><span class="sd">            k (int): Order statistic to calculate.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-79"><a href="#FiniteOrderStatistics.order_statistic_cdf-79"><span class="linenos">79</span></a>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-80"><a href="#FiniteOrderStatistics.order_statistic_cdf-80"><span class="linenos">80</span></a><span class="sd">        Returns</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-81"><a href="#FiniteOrderStatistics.order_statistic_cdf-81"><span class="linenos">81</span></a><span class="sd">        -------</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-82"><a href="#FiniteOrderStatistics.order_statistic_cdf-82"><span class="linenos">82</span></a><span class="sd">            NDArray[np.number]: Cumulative distribution function of the k-th order statistic.</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-83"><a href="#FiniteOrderStatistics.order_statistic_cdf-83"><span class="linenos">83</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="FiniteOrderStatistics.order_statistic_cdf-84"><a href="#FiniteOrderStatistics.order_statistic_cdf-84"><span class="linenos">84</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -765,38 +812,44 @@ as the x values, and they will be sorted in ascending order.</p>
 </span><span id="DiscreteOrderStatistics-49"><a href="#DiscreteOrderStatistics-49"><span class="linenos">49</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pdf</span>
 </span><span id="DiscreteOrderStatistics-50"><a href="#DiscreteOrderStatistics-50"><span class="linenos">50</span></a>
 </span><span id="DiscreteOrderStatistics-51"><a href="#DiscreteOrderStatistics-51"><span class="linenos">51</span></a>    <span class="k">def</span> <span class="nf">order_statistic_pmf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="DiscreteOrderStatistics-52"><a href="#DiscreteOrderStatistics-52"><span class="linenos">52</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Probability mass function of order statistics.</span>
+</span><span id="DiscreteOrderStatistics-52"><a href="#DiscreteOrderStatistics-52"><span class="linenos">52</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the k-th order statistic PMF of a sample of size n.</span>
 </span><span id="DiscreteOrderStatistics-53"><a href="#DiscreteOrderStatistics-53"><span class="linenos">53</span></a>
-</span><span id="DiscreteOrderStatistics-54"><a href="#DiscreteOrderStatistics-54"><span class="linenos">54</span></a><span class="sd">        Args:</span>
-</span><span id="DiscreteOrderStatistics-55"><a href="#DiscreteOrderStatistics-55"><span class="linenos">55</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the PMF at.</span>
-</span><span id="DiscreteOrderStatistics-56"><a href="#DiscreteOrderStatistics-56"><span class="linenos">56</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="DiscreteOrderStatistics-57"><a href="#DiscreteOrderStatistics-57"><span class="linenos">57</span></a><span class="sd">            k (int): Order statistic.</span>
-</span><span id="DiscreteOrderStatistics-58"><a href="#DiscreteOrderStatistics-58"><span class="linenos">58</span></a>
-</span><span id="DiscreteOrderStatistics-59"><a href="#DiscreteOrderStatistics-59"><span class="linenos">59</span></a><span class="sd">        Returns</span>
-</span><span id="DiscreteOrderStatistics-60"><a href="#DiscreteOrderStatistics-60"><span class="linenos">60</span></a><span class="sd">        -------</span>
-</span><span id="DiscreteOrderStatistics-61"><a href="#DiscreteOrderStatistics-61"><span class="linenos">61</span></a><span class="sd">            NDArray[np.number]: PMF values.</span>
-</span><span id="DiscreteOrderStatistics-62"><a href="#DiscreteOrderStatistics-62"><span class="linenos">62</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DiscreteOrderStatistics-63"><a href="#DiscreteOrderStatistics-63"><span class="linenos">63</span></a>        <span class="n">cdf_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics-64"><a href="#DiscreteOrderStatistics-64"><span class="linenos">64</span></a>        <span class="n">cdf_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics-65"><a href="#DiscreteOrderStatistics-65"><span class="linenos">65</span></a>
-</span><span id="DiscreteOrderStatistics-66"><a href="#DiscreteOrderStatistics-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="n">cdf_1</span> <span class="o">-</span> <span class="n">cdf_0</span>
-</span><span id="DiscreteOrderStatistics-67"><a href="#DiscreteOrderStatistics-67"><span class="linenos">67</span></a>
-</span><span id="DiscreteOrderStatistics-68"><a href="#DiscreteOrderStatistics-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="DiscreteOrderStatistics-69"><a href="#DiscreteOrderStatistics-69"><span class="linenos">69</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cumulative distribution function of order statistics.</span>
+</span><span id="DiscreteOrderStatistics-54"><a href="#DiscreteOrderStatistics-54"><span class="linenos">54</span></a><span class="sd">        Return the k-th order statistic probability mass function of a sample of size n</span>
+</span><span id="DiscreteOrderStatistics-55"><a href="#DiscreteOrderStatistics-55"><span class="linenos">55</span></a><span class="sd">        from a discrete distribution, given the values in x.</span>
+</span><span id="DiscreteOrderStatistics-56"><a href="#DiscreteOrderStatistics-56"><span class="linenos">56</span></a>
+</span><span id="DiscreteOrderStatistics-57"><a href="#DiscreteOrderStatistics-57"><span class="linenos">57</span></a><span class="sd">        Args:</span>
+</span><span id="DiscreteOrderStatistics-58"><a href="#DiscreteOrderStatistics-58"><span class="linenos">58</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the PMF at.</span>
+</span><span id="DiscreteOrderStatistics-59"><a href="#DiscreteOrderStatistics-59"><span class="linenos">59</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="DiscreteOrderStatistics-60"><a href="#DiscreteOrderStatistics-60"><span class="linenos">60</span></a><span class="sd">            k (int): Order statistic.</span>
+</span><span id="DiscreteOrderStatistics-61"><a href="#DiscreteOrderStatistics-61"><span class="linenos">61</span></a>
+</span><span id="DiscreteOrderStatistics-62"><a href="#DiscreteOrderStatistics-62"><span class="linenos">62</span></a><span class="sd">        Returns</span>
+</span><span id="DiscreteOrderStatistics-63"><a href="#DiscreteOrderStatistics-63"><span class="linenos">63</span></a><span class="sd">        -------</span>
+</span><span id="DiscreteOrderStatistics-64"><a href="#DiscreteOrderStatistics-64"><span class="linenos">64</span></a><span class="sd">            NDArray[np.number]: PMF values.</span>
+</span><span id="DiscreteOrderStatistics-65"><a href="#DiscreteOrderStatistics-65"><span class="linenos">65</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DiscreteOrderStatistics-66"><a href="#DiscreteOrderStatistics-66"><span class="linenos">66</span></a>        <span class="n">cdf_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics-67"><a href="#DiscreteOrderStatistics-67"><span class="linenos">67</span></a>        <span class="n">cdf_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics-68"><a href="#DiscreteOrderStatistics-68"><span class="linenos">68</span></a>
+</span><span id="DiscreteOrderStatistics-69"><a href="#DiscreteOrderStatistics-69"><span class="linenos">69</span></a>        <span class="k">return</span> <span class="n">cdf_1</span> <span class="o">-</span> <span class="n">cdf_0</span>
 </span><span id="DiscreteOrderStatistics-70"><a href="#DiscreteOrderStatistics-70"><span class="linenos">70</span></a>
-</span><span id="DiscreteOrderStatistics-71"><a href="#DiscreteOrderStatistics-71"><span class="linenos">71</span></a><span class="sd">        Args:</span>
-</span><span id="DiscreteOrderStatistics-72"><a href="#DiscreteOrderStatistics-72"><span class="linenos">72</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the CDF at.</span>
-</span><span id="DiscreteOrderStatistics-73"><a href="#DiscreteOrderStatistics-73"><span class="linenos">73</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="DiscreteOrderStatistics-74"><a href="#DiscreteOrderStatistics-74"><span class="linenos">74</span></a><span class="sd">            k (int): Order statistic.</span>
-</span><span id="DiscreteOrderStatistics-75"><a href="#DiscreteOrderStatistics-75"><span class="linenos">75</span></a>
-</span><span id="DiscreteOrderStatistics-76"><a href="#DiscreteOrderStatistics-76"><span class="linenos">76</span></a><span class="sd">        Returns</span>
-</span><span id="DiscreteOrderStatistics-77"><a href="#DiscreteOrderStatistics-77"><span class="linenos">77</span></a><span class="sd">        -------</span>
-</span><span id="DiscreteOrderStatistics-78"><a href="#DiscreteOrderStatistics-78"><span class="linenos">78</span></a><span class="sd">            NDArray[np.number]: CDF values.</span>
-</span><span id="DiscreteOrderStatistics-79"><a href="#DiscreteOrderStatistics-79"><span class="linenos">79</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DiscreteOrderStatistics-80"><a href="#DiscreteOrderStatistics-80"><span class="linenos">80</span></a>        <span class="c1"># Guarantee that x are integers</span>
-</span><span id="DiscreteOrderStatistics-81"><a href="#DiscreteOrderStatistics-81"><span class="linenos">81</span></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics-82"><a href="#DiscreteOrderStatistics-82"><span class="linenos">82</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics-83"><a href="#DiscreteOrderStatistics-83"><span class="linenos">83</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics-71"><a href="#DiscreteOrderStatistics-71"><span class="linenos">71</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="DiscreteOrderStatistics-72"><a href="#DiscreteOrderStatistics-72"><span class="linenos">72</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the k-th order statistic CDF of a sample of size n.</span>
+</span><span id="DiscreteOrderStatistics-73"><a href="#DiscreteOrderStatistics-73"><span class="linenos">73</span></a>
+</span><span id="DiscreteOrderStatistics-74"><a href="#DiscreteOrderStatistics-74"><span class="linenos">74</span></a><span class="sd">        Return the k-th order statistic cumulative distribution function of a sample of size n</span>
+</span><span id="DiscreteOrderStatistics-75"><a href="#DiscreteOrderStatistics-75"><span class="linenos">75</span></a><span class="sd">        from a discrete distribution, given the values in x.</span>
+</span><span id="DiscreteOrderStatistics-76"><a href="#DiscreteOrderStatistics-76"><span class="linenos">76</span></a>
+</span><span id="DiscreteOrderStatistics-77"><a href="#DiscreteOrderStatistics-77"><span class="linenos">77</span></a><span class="sd">        Args:</span>
+</span><span id="DiscreteOrderStatistics-78"><a href="#DiscreteOrderStatistics-78"><span class="linenos">78</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the CDF at.</span>
+</span><span id="DiscreteOrderStatistics-79"><a href="#DiscreteOrderStatistics-79"><span class="linenos">79</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="DiscreteOrderStatistics-80"><a href="#DiscreteOrderStatistics-80"><span class="linenos">80</span></a><span class="sd">            k (int): Order statistic.</span>
+</span><span id="DiscreteOrderStatistics-81"><a href="#DiscreteOrderStatistics-81"><span class="linenos">81</span></a>
+</span><span id="DiscreteOrderStatistics-82"><a href="#DiscreteOrderStatistics-82"><span class="linenos">82</span></a><span class="sd">        Returns</span>
+</span><span id="DiscreteOrderStatistics-83"><a href="#DiscreteOrderStatistics-83"><span class="linenos">83</span></a><span class="sd">        -------</span>
+</span><span id="DiscreteOrderStatistics-84"><a href="#DiscreteOrderStatistics-84"><span class="linenos">84</span></a><span class="sd">            NDArray[np.number]: CDF values.</span>
+</span><span id="DiscreteOrderStatistics-85"><a href="#DiscreteOrderStatistics-85"><span class="linenos">85</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DiscreteOrderStatistics-86"><a href="#DiscreteOrderStatistics-86"><span class="linenos">86</span></a>        <span class="c1"># Guarantee that x are integers</span>
+</span><span id="DiscreteOrderStatistics-87"><a href="#DiscreteOrderStatistics-87"><span class="linenos">87</span></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics-88"><a href="#DiscreteOrderStatistics-88"><span class="linenos">88</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics-89"><a href="#DiscreteOrderStatistics-89"><span class="linenos">89</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -891,25 +944,31 @@ as the x values, and they will be sorted in ascending order.</p>
     </div>
     <a class="headerlink" href="#DiscreteOrderStatistics.order_statistic_pmf"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="DiscreteOrderStatistics.order_statistic_pmf-51"><a href="#DiscreteOrderStatistics.order_statistic_pmf-51"><span class="linenos">51</span></a>    <span class="k">def</span> <span class="nf">order_statistic_pmf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-52"><a href="#DiscreteOrderStatistics.order_statistic_pmf-52"><span class="linenos">52</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Probability mass function of order statistics.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-52"><a href="#DiscreteOrderStatistics.order_statistic_pmf-52"><span class="linenos">52</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the k-th order statistic PMF of a sample of size n.</span>
 </span><span id="DiscreteOrderStatistics.order_statistic_pmf-53"><a href="#DiscreteOrderStatistics.order_statistic_pmf-53"><span class="linenos">53</span></a>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-54"><a href="#DiscreteOrderStatistics.order_statistic_pmf-54"><span class="linenos">54</span></a><span class="sd">        Args:</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-55"><a href="#DiscreteOrderStatistics.order_statistic_pmf-55"><span class="linenos">55</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the PMF at.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-56"><a href="#DiscreteOrderStatistics.order_statistic_pmf-56"><span class="linenos">56</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-57"><a href="#DiscreteOrderStatistics.order_statistic_pmf-57"><span class="linenos">57</span></a><span class="sd">            k (int): Order statistic.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-58"><a href="#DiscreteOrderStatistics.order_statistic_pmf-58"><span class="linenos">58</span></a>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-59"><a href="#DiscreteOrderStatistics.order_statistic_pmf-59"><span class="linenos">59</span></a><span class="sd">        Returns</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-60"><a href="#DiscreteOrderStatistics.order_statistic_pmf-60"><span class="linenos">60</span></a><span class="sd">        -------</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-61"><a href="#DiscreteOrderStatistics.order_statistic_pmf-61"><span class="linenos">61</span></a><span class="sd">            NDArray[np.number]: PMF values.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-62"><a href="#DiscreteOrderStatistics.order_statistic_pmf-62"><span class="linenos">62</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-63"><a href="#DiscreteOrderStatistics.order_statistic_pmf-63"><span class="linenos">63</span></a>        <span class="n">cdf_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-64"><a href="#DiscreteOrderStatistics.order_statistic_pmf-64"><span class="linenos">64</span></a>        <span class="n">cdf_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-65"><a href="#DiscreteOrderStatistics.order_statistic_pmf-65"><span class="linenos">65</span></a>
-</span><span id="DiscreteOrderStatistics.order_statistic_pmf-66"><a href="#DiscreteOrderStatistics.order_statistic_pmf-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="n">cdf_1</span> <span class="o">-</span> <span class="n">cdf_0</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-54"><a href="#DiscreteOrderStatistics.order_statistic_pmf-54"><span class="linenos">54</span></a><span class="sd">        Return the k-th order statistic probability mass function of a sample of size n</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-55"><a href="#DiscreteOrderStatistics.order_statistic_pmf-55"><span class="linenos">55</span></a><span class="sd">        from a discrete distribution, given the values in x.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-56"><a href="#DiscreteOrderStatistics.order_statistic_pmf-56"><span class="linenos">56</span></a>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-57"><a href="#DiscreteOrderStatistics.order_statistic_pmf-57"><span class="linenos">57</span></a><span class="sd">        Args:</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-58"><a href="#DiscreteOrderStatistics.order_statistic_pmf-58"><span class="linenos">58</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the PMF at.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-59"><a href="#DiscreteOrderStatistics.order_statistic_pmf-59"><span class="linenos">59</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-60"><a href="#DiscreteOrderStatistics.order_statistic_pmf-60"><span class="linenos">60</span></a><span class="sd">            k (int): Order statistic.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-61"><a href="#DiscreteOrderStatistics.order_statistic_pmf-61"><span class="linenos">61</span></a>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-62"><a href="#DiscreteOrderStatistics.order_statistic_pmf-62"><span class="linenos">62</span></a><span class="sd">        Returns</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-63"><a href="#DiscreteOrderStatistics.order_statistic_pmf-63"><span class="linenos">63</span></a><span class="sd">        -------</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-64"><a href="#DiscreteOrderStatistics.order_statistic_pmf-64"><span class="linenos">64</span></a><span class="sd">            NDArray[np.number]: PMF values.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-65"><a href="#DiscreteOrderStatistics.order_statistic_pmf-65"><span class="linenos">65</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-66"><a href="#DiscreteOrderStatistics.order_statistic_pmf-66"><span class="linenos">66</span></a>        <span class="n">cdf_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-67"><a href="#DiscreteOrderStatistics.order_statistic_pmf-67"><span class="linenos">67</span></a>        <span class="n">cdf_0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_statistic_cdf</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-68"><a href="#DiscreteOrderStatistics.order_statistic_pmf-68"><span class="linenos">68</span></a>
+</span><span id="DiscreteOrderStatistics.order_statistic_pmf-69"><a href="#DiscreteOrderStatistics.order_statistic_pmf-69"><span class="linenos">69</span></a>        <span class="k">return</span> <span class="n">cdf_1</span> <span class="o">-</span> <span class="n">cdf_0</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Probability mass function of order statistics.</p>
+            <div class="docstring"><p>Calculate the k-th order statistic PMF of a sample of size n.</p>
+
+<p>Return the k-th order statistic probability mass function of a sample of size n
+from a discrete distribution, given the values in x.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
@@ -938,26 +997,32 @@ as the x values, and they will be sorted in ascending order.</p>
 
     </div>
     <a class="headerlink" href="#DiscreteOrderStatistics.order_statistic_cdf"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscreteOrderStatistics.order_statistic_cdf-68"><a href="#DiscreteOrderStatistics.order_statistic_cdf-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-69"><a href="#DiscreteOrderStatistics.order_statistic_cdf-69"><span class="linenos">69</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Cumulative distribution function of order statistics.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-70"><a href="#DiscreteOrderStatistics.order_statistic_cdf-70"><span class="linenos">70</span></a>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-71"><a href="#DiscreteOrderStatistics.order_statistic_cdf-71"><span class="linenos">71</span></a><span class="sd">        Args:</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-72"><a href="#DiscreteOrderStatistics.order_statistic_cdf-72"><span class="linenos">72</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the CDF at.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-73"><a href="#DiscreteOrderStatistics.order_statistic_cdf-73"><span class="linenos">73</span></a><span class="sd">            n (int): Sample size.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-74"><a href="#DiscreteOrderStatistics.order_statistic_cdf-74"><span class="linenos">74</span></a><span class="sd">            k (int): Order statistic.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-75"><a href="#DiscreteOrderStatistics.order_statistic_cdf-75"><span class="linenos">75</span></a>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-76"><a href="#DiscreteOrderStatistics.order_statistic_cdf-76"><span class="linenos">76</span></a><span class="sd">        Returns</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-77"><a href="#DiscreteOrderStatistics.order_statistic_cdf-77"><span class="linenos">77</span></a><span class="sd">        -------</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-78"><a href="#DiscreteOrderStatistics.order_statistic_cdf-78"><span class="linenos">78</span></a><span class="sd">            NDArray[np.number]: CDF values.</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-79"><a href="#DiscreteOrderStatistics.order_statistic_cdf-79"><span class="linenos">79</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-80"><a href="#DiscreteOrderStatistics.order_statistic_cdf-80"><span class="linenos">80</span></a>        <span class="c1"># Guarantee that x are integers</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-81"><a href="#DiscreteOrderStatistics.order_statistic_cdf-81"><span class="linenos">81</span></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-82"><a href="#DiscreteOrderStatistics.order_statistic_cdf-82"><span class="linenos">82</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="DiscreteOrderStatistics.order_statistic_cdf-83"><a href="#DiscreteOrderStatistics.order_statistic_cdf-83"><span class="linenos">83</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscreteOrderStatistics.order_statistic_cdf-71"><a href="#DiscreteOrderStatistics.order_statistic_cdf-71"><span class="linenos">71</span></a>    <span class="k">def</span> <span class="nf">order_statistic_cdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">]:</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-72"><a href="#DiscreteOrderStatistics.order_statistic_cdf-72"><span class="linenos">72</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate the k-th order statistic CDF of a sample of size n.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-73"><a href="#DiscreteOrderStatistics.order_statistic_cdf-73"><span class="linenos">73</span></a>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-74"><a href="#DiscreteOrderStatistics.order_statistic_cdf-74"><span class="linenos">74</span></a><span class="sd">        Return the k-th order statistic cumulative distribution function of a sample of size n</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-75"><a href="#DiscreteOrderStatistics.order_statistic_cdf-75"><span class="linenos">75</span></a><span class="sd">        from a discrete distribution, given the values in x.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-76"><a href="#DiscreteOrderStatistics.order_statistic_cdf-76"><span class="linenos">76</span></a>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-77"><a href="#DiscreteOrderStatistics.order_statistic_cdf-77"><span class="linenos">77</span></a><span class="sd">        Args:</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-78"><a href="#DiscreteOrderStatistics.order_statistic_cdf-78"><span class="linenos">78</span></a><span class="sd">            x (NDArray[np.number]): Values to evaluate the CDF at.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-79"><a href="#DiscreteOrderStatistics.order_statistic_cdf-79"><span class="linenos">79</span></a><span class="sd">            n (int): Sample size.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-80"><a href="#DiscreteOrderStatistics.order_statistic_cdf-80"><span class="linenos">80</span></a><span class="sd">            k (int): Order statistic.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-81"><a href="#DiscreteOrderStatistics.order_statistic_cdf-81"><span class="linenos">81</span></a>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-82"><a href="#DiscreteOrderStatistics.order_statistic_cdf-82"><span class="linenos">82</span></a><span class="sd">        Returns</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-83"><a href="#DiscreteOrderStatistics.order_statistic_cdf-83"><span class="linenos">83</span></a><span class="sd">        -------</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-84"><a href="#DiscreteOrderStatistics.order_statistic_cdf-84"><span class="linenos">84</span></a><span class="sd">            NDArray[np.number]: CDF values.</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-85"><a href="#DiscreteOrderStatistics.order_statistic_cdf-85"><span class="linenos">85</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-86"><a href="#DiscreteOrderStatistics.order_statistic_cdf-86"><span class="linenos">86</span></a>        <span class="c1"># Guarantee that x are integers</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-87"><a href="#DiscreteOrderStatistics.order_statistic_cdf-87"><span class="linenos">87</span></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-88"><a href="#DiscreteOrderStatistics.order_statistic_cdf-88"><span class="linenos">88</span></a>        <span class="n">cdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="DiscreteOrderStatistics.order_statistic_cdf-89"><a href="#DiscreteOrderStatistics.order_statistic_cdf-89"><span class="linenos">89</span></a>        <span class="k">return</span> <span class="n">ordstat_cdf</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Cumulative distribution function of order statistics.</p>
+            <div class="docstring"><p>Calculate the k-th order statistic CDF of a sample of size n.</p>
+
+<p>Return the k-th order statistic cumulative distribution function of a sample of size n
+from a discrete distribution, given the values in x.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
@@ -980,6 +1045,143 @@ as the x values, and they will be sorted in ascending order.</p>
                                 <dl>
                                     <div><dt>pyordstat.base.BaseOrderStatistics</dt>
                                 <dd id="DiscreteOrderStatistics.cdf" class="variable">cdf</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="RVContOrderStatistics">
+                            <input id="RVContOrderStatistics-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">RVContOrderStatistics</span><wbr>(<span class="base"><a href="#ContinuousOrderStatistics">pyordstat.ContinuousOrderStatistics</a></span>):
+
+                <label class="view-source-button" for="RVContOrderStatistics-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#RVContOrderStatistics"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RVContOrderStatistics-9"><a href="#RVContOrderStatistics-9"><span class="linenos"> 9</span></a><span class="k">class</span> <span class="nc">RVContOrderStatistics</span><span class="p">(</span><span class="n">ContinuousOrderStatistics</span><span class="p">):</span>
+</span><span id="RVContOrderStatistics-10"><a href="#RVContOrderStatistics-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for order statistics based on rv_continuous distributions.&quot;&quot;&quot;</span>
+</span><span id="RVContOrderStatistics-11"><a href="#RVContOrderStatistics-11"><span class="linenos">11</span></a>
+</span><span id="RVContOrderStatistics-12"><a href="#RVContOrderStatistics-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distribution</span><span class="p">:</span> <span class="n">rv_continuous</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="RVContOrderStatistics-13"><a href="#RVContOrderStatistics-13"><span class="linenos">13</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Base class for order statistics based on rv_continuous distributions.</p>
+</div>
+
+
+                            <div id="RVContOrderStatistics.__init__" class="classattr">
+                                        <input id="RVContOrderStatistics.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">RVContOrderStatistics</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">distribution</span><span class="p">:</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">_distn_infrastructure</span><span class="o">.</span><span class="n">rv_continuous</span></span>)</span>
+
+                <label class="view-source-button" for="RVContOrderStatistics.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#RVContOrderStatistics.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RVContOrderStatistics.__init__-12"><a href="#RVContOrderStatistics.__init__-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distribution</span><span class="p">:</span> <span class="n">rv_continuous</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="RVContOrderStatistics.__init__-13"><a href="#RVContOrderStatistics.__init__-13"><span class="linenos">13</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">pdf</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Create a continuous order statistics distribution.</p>
+
+<p>Requires a probability density function and a cumulative distribution function,
+plus any additional arguments to pass to the distribution functions.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>pdf (CallableDistrFunc):</strong>  _Probability density function._</li>
+<li><strong>cdf (CallableDistrFunc):</strong>  _Cumulative distribution function._</li>
+<li><strong>*args (Any):</strong>  _Additional arguments to pass to the distribution functions._</li>
+<li><strong>**kwargs (Any):</strong>  Additional keyword arguments to pass to the distribution functions.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt><a href="#ContinuousOrderStatistics">ContinuousOrderStatistics</a></dt>
+                                <dd id="RVContOrderStatistics.pdf" class="variable"><a href="#ContinuousOrderStatistics.pdf">pdf</a></dd>
+                <dd id="RVContOrderStatistics.cdf" class="variable"><a href="#ContinuousOrderStatistics.cdf">cdf</a></dd>
+                <dd id="RVContOrderStatistics.order_statistic_pdf" class="function"><a href="#ContinuousOrderStatistics.order_statistic_pdf">order_statistic_pdf</a></dd>
+                <dd id="RVContOrderStatistics.order_statistic_cdf" class="function"><a href="#ContinuousOrderStatistics.order_statistic_cdf">order_statistic_cdf</a></dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="RVDiscrOrderStatistics">
+                            <input id="RVDiscrOrderStatistics-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">RVDiscrOrderStatistics</span><wbr>(<span class="base"><a href="#DiscreteOrderStatistics">pyordstat.DiscreteOrderStatistics</a></span>):
+
+                <label class="view-source-button" for="RVDiscrOrderStatistics-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#RVDiscrOrderStatistics"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RVDiscrOrderStatistics-9"><a href="#RVDiscrOrderStatistics-9"><span class="linenos"> 9</span></a><span class="k">class</span> <span class="nc">RVDiscrOrderStatistics</span><span class="p">(</span><span class="n">DiscreteOrderStatistics</span><span class="p">):</span>
+</span><span id="RVDiscrOrderStatistics-10"><a href="#RVDiscrOrderStatistics-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for order statistics based on rv_discrete distributions.&quot;&quot;&quot;</span>
+</span><span id="RVDiscrOrderStatistics-11"><a href="#RVDiscrOrderStatistics-11"><span class="linenos">11</span></a>
+</span><span id="RVDiscrOrderStatistics-12"><a href="#RVDiscrOrderStatistics-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distribution</span><span class="p">:</span> <span class="n">rv_discrete</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="RVDiscrOrderStatistics-13"><a href="#RVDiscrOrderStatistics-13"><span class="linenos">13</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">pmf</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Base class for order statistics based on rv_discrete distributions.</p>
+</div>
+
+
+                            <div id="RVDiscrOrderStatistics.__init__" class="classattr">
+                                        <input id="RVDiscrOrderStatistics.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">RVDiscrOrderStatistics</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">distribution</span><span class="p">:</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">_distn_infrastructure</span><span class="o">.</span><span class="n">rv_discrete</span></span>)</span>
+
+                <label class="view-source-button" for="RVDiscrOrderStatistics.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#RVDiscrOrderStatistics.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RVDiscrOrderStatistics.__init__-12"><a href="#RVDiscrOrderStatistics.__init__-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distribution</span><span class="p">:</span> <span class="n">rv_discrete</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="RVDiscrOrderStatistics.__init__-13"><a href="#RVDiscrOrderStatistics.__init__-13"><span class="linenos">13</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">distribution</span><span class="o">.</span><span class="n">pmf</span><span class="p">,</span> <span class="n">distribution</span><span class="o">.</span><span class="n">cdf</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Initialize discrete order statistics.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>pmf (CallableDistrFunc):</strong>  Probability mass function of the distribution.</li>
+<li><strong>cdf (CallableDistrFunc):</strong>  Cumulative distribution function of the distribution.</li>
+<li><strong>*args (Any):</strong>  Additional arguments to be passed to the PMF and CDF.</li>
+<li><strong>**kwargs (Any):</strong>  Additional keyword arguments to be passed to the PMF and CDF.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt><a href="#DiscreteOrderStatistics">DiscreteOrderStatistics</a></dt>
+                                <dd id="RVDiscrOrderStatistics.pdf" class="variable"><a href="#DiscreteOrderStatistics.pdf">pdf</a></dd>
+                <dd id="RVDiscrOrderStatistics.pmf" class="variable"><a href="#DiscreteOrderStatistics.pmf">pmf</a></dd>
+                <dd id="RVDiscrOrderStatistics.order_statistic_pmf" class="function"><a href="#DiscreteOrderStatistics.order_statistic_pmf">order_statistic_pmf</a></dd>
+                <dd id="RVDiscrOrderStatistics.order_statistic_cdf" class="function"><a href="#DiscreteOrderStatistics.order_statistic_cdf">order_statistic_cdf</a></dd>
+
+            </div>
+            <div><dt>pyordstat.base.BaseOrderStatistics</dt>
+                                <dd id="RVDiscrOrderStatistics.cdf" class="variable">cdf</dd>
 
             </div>
                                 </dl>

@@ -1,79 +1,77 @@
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/stur86/pyordstat)
-
 # pyordstat
 
-Order statistics for Python
+Order statistics for Python 📊
 
-## Using
+## Introduction
+
+A package providing order statistics for Python. The package implements [the well-known formulas for order statistics](https://en.wikipedia.org/wiki/Order_statistic) in a format that is amenable to being used with either infinite distributions expressed as functions, or finite distributions expressed as lists of values and their probability mass. It is also compatible with the format of [SciPy's `stats` module](https://docs.scipy.org/doc/scipy/reference/stats.html).
+
+### What are order statistics?
+
+Order statistics are the statistics of the k-th variable in a sample of N elements. Given a probability distribution from which identical and independent samples are drawn, the k-th order statistic is the k-th smallest value in the sample. For example, the median is the 50th order statistic in a sample of 100. This package provides functions for calculating the probability density function (PDF) and cumulative distribution function (CDF) of order statistics for arbitrary distributions.
+
+## Installation
 
 To add and install this package as a dependency of your project, run `poetry add pyordstat`.
 
+## Usage
+
+### Continuous distributions
+
+Use the class `ContinuousOrderStatistics` to calculate the PDF and CDF of order statistics defined on a continuous support. The class takes callable PDF and CDF functions as its first arguments, and any successive parameters are passed to the PDF and CDF functions. For example, to calculate the PDF and CDF of the median of a standard normal distribution, you would do the following:
+
+```python
+from pyordstat import ContinuousOrderStatistics
+
+def normal_pdf(x, mu, sigma):
+    return 1 / (2 * np.pi) ** 0.5 * np.exp(-0.5 * (x/mu) ** 2/ sigma ** 2)
+
+def normal_cdf(x, mu, sigma):
+    return 0.5 * (1 + erf((x - mu) / (2 ** 0.5 * sigma)))
+
+order_stats = ContinuousOrderStatistics(normal_pdf, normal_cdf, mu, sigma)
+
+
+pdf_4_2 = order_stats.order_statistics_pdf(4, 2)
+```
+
+### Discrete distributions
+
+For discrete distributions, use the class `DiscreteOrderStatistics`. This class takes callable PMF (Probability Mass Function) and CDF functions as its first arguments, and any successive parameters are passed to the PMF and CDF functions. It works the same as `ContinuousOrderStatistics`, but the `_pdf` in methods is replaced by `_pmf` (as it's more appropriate to talk about probability mass functions for discrete distributions).
+
+### Finite distributions
+
+For finite distributions, use the class `FiniteOrderStatistics`. This class allows you to just pass the values of the support and their probability mass as arrays, and it will calculate the CDF for you. For example, to calculate the PDF and CDF of the median for a sample of 4 drawn from a discrete distribution with support `[1, 2, 3, 4, 5]` and probability mass `[0.1, 0.2, 0.3, 0.2, 0.2]`, you would do the following:
+
+```python
+
+from pyordstat import FiniteOrderStatistics
+
+support = np.array([1, 2, 3, 4, 5])
+pmf = np.array([0.1, 0.2, 0.3, 0.2, 0.2])
+
+order_stats = FiniteOrderStatistics(support, pmf)
+
+pdf_4_2 = order_stats.order_statistics_pdf(4, 2)
+```
+
+### Scipy compatibility
+
+The classes `RVContOrderStatistics` and `RVDiscrOrderStatistics` will accept an instance of a SciPy `rv_continuous` or `rv_discrete` distribution respectively. 
+For convenience, a few common use cases of this are included in the `pyordstat.functions` module.
+
 ## Contributing
 
-<details>
-<summary>Prerequisites</summary>
+Contributions are welcome! This project was based off the Poetry Cookiecutter template found [here](https://github.com/radix-ai/poetry-cookiecutter). Recommended steps when developing are:
 
-<details>
-<summary>1. Set up Git to use SSH</summary>
+* set up your poetry environment with `poetry install`
+* set up the pre-commit hooks with `pre-commit install` (make sure to have Ruff, Black, and MyPy installed in the main environment)
+* lint the code with `poe lint`
+* run the tests with `poe test`
+* rebuild the docs with `poe docs`
 
-1. [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) and [add the SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
-1. Configure SSH to automatically load your SSH keys:
-    ```sh
-    cat << EOF >> ~/.ssh/config
-    Host *
-      AddKeysToAgent yes
-      IgnoreUnknown UseKeychain
-      UseKeychain yes
-    EOF
-    ```
+Any contributions should be sent as a PR to the `develop` branch. Please make sure to include tests for any new functionality, and to update the docs accordingly.
 
-</details>
+## License
 
-<details>
-<summary>2. Install Docker</summary>
-
-1. [Install Docker Desktop](https://www.docker.com/get-started).
-    - Enable _Use Docker Compose V2_ in Docker Desktop's preferences window.
-    - _Linux only_:
-        - [Configure Docker to use the BuildKit build system](https://docs.docker.com/build/buildkit/#getting-started). On macOS and Windows, BuildKit is enabled by default in Docker Desktop.
-        - Export your user's user id and group id so that [files created in the Dev Container are owned by your user](https://github.com/moby/moby/issues/3206):
-            ```sh
-            cat << EOF >> ~/.bashrc
-            export UID=$(id --user)
-            export GID=$(id --group)
-            EOF
-            ```
-
-</details>
-
-<details>
-<summary>3. Install VS Code or PyCharm</summary>
-
-1. [Install VS Code](https://code.visualstudio.com/) and [VS Code's Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). Alternatively, install [PyCharm](https://www.jetbrains.com/pycharm/download/).
-2. _Optional:_ install a [Nerd Font](https://www.nerdfonts.com/font-downloads) such as [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode) and [configure VS Code](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions) or [configure PyCharm](https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions) to use it.
-
-</details>
-
-</details>
-
-<details open>
-<summary>Development environments</summary>
-
-The following development environments are supported:
-
-1. ⭐️ _GitHub Codespaces_: click on _Code_ and select _Create codespace_ to start a Dev Container with [GitHub Codespaces](https://github.com/features/codespaces).
-1. ⭐️ _Dev Container (with container volume)_: click on [Open in Dev Containers](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/stur86/pyordstat) to clone this repository in a container volume and create a Dev Container with VS Code.
-1. _Dev Container_: clone this repository, open it with VS Code, and run <kbd>Ctrl/⌘</kbd> + <kbd>⇧</kbd> + <kbd>P</kbd> → _Dev Containers: Reopen in Container_.
-1. _PyCharm_: clone this repository, open it with PyCharm, and [configure Docker Compose as a remote interpreter](https://www.jetbrains.com/help/pycharm/using-docker-compose-as-a-remote-interpreter.html#docker-compose-remote) with the `dev` service.
-1. _Terminal_: clone this repository, open it with your terminal, and run `docker compose up --detach dev` to start a Dev Container in the background, and then run `docker compose exec dev zsh` to open a shell prompt in the Dev Container.
-
-</details>
-
-<details>
-<summary>Developing</summary>
-
-- Run `poe` from within the development environment to print a list of [Poe the Poet](https://github.com/nat-n/poethepoet) tasks available to run on this project.
-- Run `poetry add {package}` from within the development environment to install a run time dependency and add it to `pyproject.toml` and `poetry.lock`. Add `--group test` or `--group dev` to install a CI or development dependency, respectively.
-- Run `poetry update` from within the development environment to upgrade all dependencies to the latest versions allowed by `pyproject.toml`.
-
-</details>
+This project is licensed under the terms of the MIT license.
