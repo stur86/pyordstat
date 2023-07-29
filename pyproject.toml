@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]  # https://python-poetry.org/docs/pyproject/
 name = "pyordstat"
-version = "0.0.0"
+version = "1.0.0"
 description = "Order statistics for Python"
 authors = ["Simone Sturniolo <simonesturniolo@gmail.com>"]
 readme = "README.md"
