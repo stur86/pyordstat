@@ -13,27 +13,27 @@ class FiniteOrderStatistics(BaseOrderStatistics):
     _pdf: NDArray[np.number]
     _cdf: NDArray[np.number]
 
-    def __init__(self, x: NDArray[np.number], pdf: NDArray[np.number]) -> None:
+    def __init__(self, x: NDArray[np.number], pmf: NDArray[np.number]) -> None:
         """Create a discrete order statistics distribution.
 
-        Requires the values of the random variable and the probability density function.
+        Requires the values of the random variable and the probability mass function.
         The x values can be in any order, but the pdf values must be in the same order
         as the x values, and they will be sorted in ascending order.
 
         Args:
             x (NDArray[np.number]): Support of the distribution.
-            pdf (NDArray[np.number]): Probability density function of the distribution.
+            pdf (NDArray[np.number]): Probability mass function of the distribution.
         """
         isort = np.argsort(x)
         self._x = np.asarray(x)[isort]
-        pdf = np.asarray(pdf)[isort]
-        cdf = np.cumsum(pdf)
+        pmf = np.asarray(pmf)[isort]
+        cdf = np.cumsum(pmf)
 
         # Normalize
-        pdf = pdf / cdf[-1]
+        pmf = pmf / cdf[-1]
         cdf = cdf / cdf[-1]
 
-        super().__init__(pdf, cdf)
+        super().__init__(pmf, cdf)
 
     @property
     def x(self) -> NDArray[np.number]:
@@ -42,7 +42,12 @@ class FiniteOrderStatistics(BaseOrderStatistics):
 
     @property
     def pdf(self) -> NDArray[np.number]:
-        """Probability density function."""
+        """Probability density function of order statistics."""
+        raise NotImplementedError("PDF not implemented for discrete order statistics.")
+
+    @property
+    def pmf(self) -> NDArray[np.number]:
+        """Probability mass function of order statistics."""
         return self._pdf
 
     @property
@@ -50,8 +55,8 @@ class FiniteOrderStatistics(BaseOrderStatistics):
         """Cumulative distribution function."""
         return self._cdf
 
-    def order_statistic_pdf(self, n: int, k: int) -> NDArray[np.number]:
-        """Order statistic probability density function.
+    def order_statistic_pmf(self, n: int, k: int) -> NDArray[np.number]:
+        """Order statistic probability mass function.
 
         Args:
             n (int): Sample size.
@@ -59,7 +64,7 @@ class FiniteOrderStatistics(BaseOrderStatistics):
 
         Returns
         -------
-            NDArray[np.number]: Probability density function of the k-th order statistic.
+            NDArray[np.number]: Probability mass function of the k-th order statistic.
         """
         cdf = self.order_statistic_cdf(n, k)
         return np.diff(cdf, prepend=0)
