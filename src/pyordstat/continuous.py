@@ -81,7 +81,7 @@ class ContinuousOrderStatistics(BaseOrderStatistics):
     def order_statistic_cdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
         """Calculate the k-th order statistic PDF of a sample of size n.
 
-        Return the k-th order statistic probability density function of a sample of size n
+        Return the k-th order statistic cumulative distribution function of a sample of size n
         from a continuous distribution, given the values in x.
 
         Args:

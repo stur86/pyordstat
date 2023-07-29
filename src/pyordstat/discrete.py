@@ -48,7 +48,10 @@ class DiscreteOrderStatistics(BaseOrderStatistics):
         return self._pdf
 
     def order_statistic_pmf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
-        """Probability mass function of order statistics.
+        """Calculate the k-th order statistic PMF of a sample of size n.
+
+        Return the k-th order statistic probability mass function of a sample of size n
+        from a discrete distribution, given the values in x.
 
         Args:
             x (NDArray[np.number]): Values to evaluate the PMF at.
@@ -65,7 +68,10 @@ class DiscreteOrderStatistics(BaseOrderStatistics):
         return cdf_1 - cdf_0
 
     def order_statistic_cdf(self, x: NDArray[np.number], n: int, k: int) -> NDArray[np.number]:
-        """Cumulative distribution function of order statistics.
+        """Calculate the k-th order statistic CDF of a sample of size n.
+
+        Return the k-th order statistic cumulative distribution function of a sample of size n
+        from a discrete distribution, given the values in x.
 
         Args:
             x (NDArray[np.number]): Values to evaluate the CDF at.
